@@ -18,7 +18,7 @@ function getPlayersCards(cartasJogador) {
     let cartas = cartasJogador.split(' ') //receber cartas do jogador
 
     //separa apenas os "indices" das cartas e ordena de acordo com a ordem de valor definida no array CARTAS
-    let numbers = cartas.map(n => n[0]).sort((a, b) => CARTAS.indexOf(a) - CARTAS.indexOf(b))
+    let numeros = cartas.map(n => n[0]).sort((a, b) => CARTAS.indexOf(a) - CARTAS.indexOf(b))
     let naipes = cartas.map(n => n[1]) //separar apenas os naipes
 
     let flush = naipes.every(n => n === n[0]) //verificar se os naipes são todos iguais
