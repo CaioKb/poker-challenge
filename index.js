@@ -21,12 +21,12 @@ function getPlayersCards(cartasJogador) {
     let numeros = cartas.map(n => n[0]).sort((a, b) => CARTAS.indexOf(a) - CARTAS.indexOf(b))
     let naipes = cartas.map(n => n[1]) //separar apenas os naipes
 
+
     let flush = naipes.every(n => n === n[0]) //verificar se os naipes são todos iguais
+    
+    let straight = numeros.every((num, i) => i === numeros.length - 1 || CARTAS.indexOf(num) < CARTAS.indexOf(numeros[i + 1])) //verificar se os números formam uma sequencia
 
-    //verificar se os números são uma sequencia
-    let straight = numbers.every((num, i) => i === numbers.length - 1 || CARTAS.indexOf(num) < CARTAS.indexOf(numbers[i + 1]))
-
-   console.log(numbers[0]) 
+   console.log(numeros[0]) 
     if(straight && flush)
         console.log("Straight Flush")
 }
