@@ -17,7 +17,6 @@ function comparePlayersHand(m1, m2) {
 
     let h1 = getPlayersHand(m1);
     let h2 = getPlayersHand(m2);
-
     console.log(RANKS[h1.hand] + " x " + RANKS[h2.hand])
 
     //loop para comparar as cartas e definir o vencedor
