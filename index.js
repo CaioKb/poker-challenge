@@ -10,7 +10,7 @@ const NAIPES = ['D', 'H', 'S', 'C']
 const RANKS = ["Highcard", "Pair", "Two Pairs", "Three of a Kind", "Straight", "Flush", "Full House",
     "Four of a Kind", "Straight Flush", "Royal Flush"]
 
-let hand1 = "1H 2H 3H 4H 5H"
+let hand1 = "1H 1H 3S 4H 5H"
 let hand2 = "3C 3D 3S 9S 9D"
 
 function comparePlayersHand(m1, m2) {
@@ -30,7 +30,7 @@ function comparePlayersHand(m1, m2) {
                 return "2 Wins"
             }
             if (i === 0)
-                return "Tie"
+                return "Draw"
         }
     }
     return h1.hand > h2.hand ? "1 Wins" : "2 Wins"
@@ -85,7 +85,7 @@ function checkForQuadra(numeros) {
         quadra = numeros.slice(1, 5)
         isQuadra = quadra.every((num, i) => num === quadra[i + 1] || i === quadra.length - 1)
     }
-    return { isQuadra, numQuadra }
+    return { isQuadra, numQuadra } //retorna um boolean e o numero da quadra para o caso de um empate
 }
 
 //função para verificar se o jogador possui um full house
